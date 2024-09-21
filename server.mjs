@@ -21,8 +21,7 @@ app.get('/api/users', (req, res) => {
   app.post('/api/users', (req, res) => {
     const newUser = { id: users.length + 1, ...req.body };
     users.push(newUser);
-    // res.status(201).json(newUser);
-     res.json(newUser);
+    res.status(201).json(newUser);
   });
 
 // Start the server
