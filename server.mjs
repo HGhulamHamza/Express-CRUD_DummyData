@@ -41,7 +41,7 @@ app.get('/api/users', (req, res) => {
 
 
 
-// DELET request to delete a user form the array
+// DELET request to delete a user form the array with status code 
   app.delete('/api/users/:id', (req, res) => {
     const userId = parseInt(req.params.id);
     const index = users.findIndex(u => u.id === userId);
