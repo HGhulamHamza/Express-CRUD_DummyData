@@ -12,7 +12,7 @@ let users = [
 ];
 
 
-// GET request to fetch all users with a status code
+// GET request to fetch all users with a status code of 200
 app.get('/api/users', (req, res) => {
     res.status(200).json(users); // Return status code 200 with the array of users
   });
@@ -37,8 +37,6 @@ app.get('/api/users', (req, res) => {
   
     }
   });
-
-
 
 
 // DELET request to delete a user form the array with status code 
