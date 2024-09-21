@@ -24,7 +24,7 @@ app.get('/api/users', (req, res) => {
     res.status(201).json(newUser);
   });
 
-// PUT request to update a user with ID
+// PUT request with status codes to update a user with ID 
   app.put('/api/users/:id', (req, res) => {
     const userId = parseInt(req.params.id);
     const index = users.findIndex(u => u.id === userId);
