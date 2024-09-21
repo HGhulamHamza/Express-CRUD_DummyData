@@ -14,7 +14,7 @@ let users = [
 
 // GET request to fetch all users with a status code
 app.get('/api/users', (req, res) => {
-    res.json(users); // Return status code 200 with the array of users
+    res.status(200).json(users); // Return status code 200 with the array of users
   });
 
 // Start the server
