@@ -11,6 +11,12 @@ let users = [
   { id: 2, name: 'Abbas', email: 'abbas@gmail.com' }
 ];
 
+
+// GET request to fetch all users with a status code
+app.get('/api/users', (req, res) => {
+    res.json(users); // Return status code 200 with the array of users
+  });
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
