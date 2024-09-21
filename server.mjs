@@ -17,6 +17,14 @@ app.get('/api/users', (req, res) => {
     res.status(200).json(users); // Return status code 200 with the array of users
   });
 
+// POST request to add a user
+  app.post('/api/users', (req, res) => {
+    const newUser = { id: users.length + 1, ...req.body };
+    users.push(newUser);
+    // res.status(201).json(newUser);
+     res.json(newUser);
+  });
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
