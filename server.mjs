@@ -37,6 +37,22 @@ app.get('/api/users', (req, res) => {
   
     }
   });
+
+
+
+
+// DELET request to delete a user form the array
+  app.delete('/api/users/:id', (req, res) => {
+    const userId = parseInt(req.params.id);
+    const index = users.findIndex(u => u.id === userId);
+    
+    if (index !== -1) {
+      users.splice(index, 1);
+      res.json({ message: 'User deleted successfully' });
+    } else {
+      res.status(404).send('User not found');
+    }
+  });
   
 
 // Start the server
