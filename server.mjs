@@ -34,6 +34,7 @@ app.get('/api/users', (req, res) => {
       res.json(users[index]);
     } else {
       res.status(404).send('User not found');
+  
     }
   });
   
