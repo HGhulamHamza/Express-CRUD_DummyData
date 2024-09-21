@@ -24,6 +24,20 @@ app.get('/api/users', (req, res) => {
     res.status(201).json(newUser);
   });
 
+// PUT request to update a user with ID
+  app.put('/api/users/:id', (req, res) => {
+    const userId = parseInt(req.params.id);
+    const index = users.findIndex(u => u.id === userId);
+    
+    if (index !== -1) {
+      users[index] = { id: userId, ...req.body };
+      res.json(users[index]);
+    } else {
+      res.status(404).send('User not found');
+    }
+  });
+  
+
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
